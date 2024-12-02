@@ -11,6 +11,41 @@ abstract class Vehiculo {
         $this->color = $color;
     }
  
+    public function getMarca(): string{
+
+        return $this->marca;
+
+    }
+
+    public function setMarca(string $marca): void{
+
+        $this->marca = $marca;
+
+    }
+
+    public function getModelo(): string{
+
+        return $this->modelo;
+        
+    }
+
+    public function setModelo(string $modelo): void{
+
+        $this->modelo = $modelo;
+
+    }
+
+    public function getColor(): string{
+
+        return $this->color;
+        
+    }
+
+    public function setColor(string $color): void{
+
+        $this->color = $color;
+
+    }
  
     abstract public function mover();
     abstract public function detener();
