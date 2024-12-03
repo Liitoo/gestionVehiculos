@@ -1,5 +1,5 @@
 <?php
-
+require_once 'Vehiculo.php';
 class Camion extends Vehiculo {
 
     private float $capacidadCarga;
@@ -18,22 +18,28 @@ class Camion extends Vehiculo {
         
     }
 
-    public function setCapacidadCarga(float $capacidadCarga): void{
+    public function setCapacidadCarga(float $capacidadCarga): Camion{
 
         $this->capacidadCarga = $capacidadCarga;
+        return $this;
 
     }
 
     public function mover(){
 
+        echo("El camion se mueve");
+
     }
     public function detener(){
+
+        echo("El camion se detiene");
+        
         
     }
 
     public function obtenerInformacion(): string {
 
-        return parent::obtenerInformacion() . "Capacidad de Carga: {$this->capacidadCarga}";
+        return parent::obtenerInformacion() . ", Capacidad de Carga: {$this->capacidadCarga}";
         
     }
 }

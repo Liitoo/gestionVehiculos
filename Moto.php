@@ -1,5 +1,5 @@
 <?php
-
+require_once 'Vehiculo.php';
 class Moto extends Vehiculo {
 
     private int $cilindrada;
@@ -18,22 +18,27 @@ class Moto extends Vehiculo {
         
     }
 
-    public function setCilindrada(int $cilindrada): void{
+    public function setCilindrada(int $cilindrada): Moto{
 
         $this->cilindrada = $cilindrada;
+        return $this;
 
     }
 
     public function mover(){
 
+        echo("La moto se mueve");
+
     }
     public function detener(){
+
+        echo("La moto se detiene");
         
     }
 
     public function obtenerInformacion(): string {
 
-        return parent::obtenerInformacion() . "Cilindrada: {$this->cilindrada}";
+        return parent::obtenerInformacion() . ", Cilindrada: {$this->cilindrada}";
         
     }
 }

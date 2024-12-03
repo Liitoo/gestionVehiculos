@@ -1,5 +1,5 @@
 <?php
-
+require_once 'Vehiculo.php';
 class Coche extends Vehiculo {
 
     private int $numPuertas;
@@ -18,22 +18,27 @@ class Coche extends Vehiculo {
         
     }
 
-    public function setNumPuertas(int $numPuertas): void{
+    public function setNumPuertas(int $numPuertas): self{
 
         $this->numPuertas = $numPuertas;
+        return $this;
 
     }
 
     public function mover(){
 
+        echo("El coche se mueve");
+
     }
     public function detener(){
+
+        echo("El coche se detiene");
         
     }
 
     public function obtenerInformacion(): string {
 
-        return parent::obtenerInformacion() . "Numero de Puertas: {$this->numPuertas}";
+        return parent::obtenerInformacion() . ", Numero de Puertas: {$this->numPuertas}";
         
     }
 

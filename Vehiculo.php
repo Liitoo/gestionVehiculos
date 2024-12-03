@@ -17,9 +17,10 @@ abstract class Vehiculo {
 
     }
 
-    public function setMarca(string $marca): void{
+    public function setMarca(string $marca): self{
 
         $this->marca = $marca;
+        return $this;
 
     }
 
@@ -29,9 +30,10 @@ abstract class Vehiculo {
         
     }
 
-    public function setModelo(string $modelo): void{
+    public function setModelo(string $modelo): self{
 
         $this->modelo = $modelo;
+        return $this;
 
     }
 
@@ -41,17 +43,28 @@ abstract class Vehiculo {
         
     }
 
-    public function setColor(string $color): void{
+    public function setColor(string $color): self{
 
         $this->color = $color;
+        return $this;
 
     }
  
     abstract public function mover();
     abstract public function detener();
+
  
  
     public function obtenerInformacion(): string {
         return "Marca: {$this->marca}, Modelo: {$this->modelo}, Color: {$this->color}";
+    }
+
+    public function __toString(): string {
+        return $this->obtenerInformacion();
+    }
+
+    public function __get($marca) {
+         return $this->$marca;
+         
     }
 }
